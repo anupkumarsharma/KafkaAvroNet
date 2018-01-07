@@ -11,7 +11,7 @@ init:
 before_build:
 - appveyor-retry dotnet restore -v Minimal
 build_script:
-- dotnet build "KafkaAvroNet" -c %CONFIGURATION% --no-dependencies 
+- dotnet build "KafkaAvroNet.sln" -c %CONFIGURATION%
 after_build:
 - dotnet pack "KafkaAvroNet" -c %CONFIGURATION% --no-build -o artifacts
 artifacts:
