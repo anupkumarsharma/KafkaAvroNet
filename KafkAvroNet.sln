@@ -1,0 +1,92 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27004.2005
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{F7F61833-495B-4B70-85F7-0984949F3908}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test_Unit", "Test_Unit", "{1DC4C23D-4C5A-4A0B-A930-DEB8FEB5BEC7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KafkaAvroNet.Kafka", "Core\KafkaAvroNet.Kafka\KafkaAvroNet.Kafka.csproj", "{592E106E-1C41-44EF-B39A-B9C7FF1B9BC9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KafkaAvroNet.SchemaRegistry", "Core\KafkaAvroNet.SchemaRegistry\KafkaAvroNet.SchemaRegistry.csproj", "{E7982BCB-096B-4C94-956E-E21E0BED3428}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{0699D20A-C7BA-4DE7-83FE-CB074D9478E7}"
+	ProjectSection(SolutionItems) = preProject
+		appveyor.yml = appveyor.yml
+		Build.ps1 = Build.ps1
+		docker-compose.yml = docker-compose.yml
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KafkaAvroNet.Avro", "Core\KafkaAvroNet.Avro\KafkaAvroNet.Avro.csproj", "{B66E7B89-6EB8-4FE8-98D2-07079A331D25}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Kafka-Net-Manager", "Kafka-Net-Manager", "{9E36DCF0-1CA7-476A-9C4F-B64400C1A9C0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test_Integration", "Test_Integration", "{D2490A34-8B76-49E1-97B5-0A8DFFE1B55C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KafkaAvroNet.Integration.Tests", "Test_Integration\KafkaAvroNet.IntegrationTest\KafkaAvroNet.Integration.Tests.csproj", "{54D44C49-3E13-48CD-9CC9-10E8DBE28054}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KafkaAvroNet.SchemaRegistry.Tests", "Test\KafkaAvroNet.SchemaRegistry.Tests\KafkaAvroNet.SchemaRegistry.Tests.csproj", "{1A6DC7E1-57AF-4A9E-8D2A-4635B7D57BF7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KafkaAvroNet.Avro.Test", "Test\KafkaAvroNet.Avro.Test\KafkaAvroNet.Avro.Test.csproj", "{4AC206E2-9876-4F27-8604-FA898A810163}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KafkaAvroNet.Kafka.Tests", "Test\KafkaAvroNet.Kafka.Tests\KafkaAvroNet.Kafka.Tests.csproj", "{FEC733BB-546D-4C11-85AD-865B01F7D2A6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KafkaAvroNet", "Kafka-Net-Manager\KafkaAvroNet\KafkaAvroNet.csproj", "{66CEC371-69FF-459F-A862-2CF33FA4577C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{592E106E-1C41-44EF-B39A-B9C7FF1B9BC9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{592E106E-1C41-44EF-B39A-B9C7FF1B9BC9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{592E106E-1C41-44EF-B39A-B9C7FF1B9BC9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{592E106E-1C41-44EF-B39A-B9C7FF1B9BC9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E7982BCB-096B-4C94-956E-E21E0BED3428}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E7982BCB-096B-4C94-956E-E21E0BED3428}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E7982BCB-096B-4C94-956E-E21E0BED3428}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E7982BCB-096B-4C94-956E-E21E0BED3428}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B66E7B89-6EB8-4FE8-98D2-07079A331D25}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B66E7B89-6EB8-4FE8-98D2-07079A331D25}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B66E7B89-6EB8-4FE8-98D2-07079A331D25}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B66E7B89-6EB8-4FE8-98D2-07079A331D25}.Release|Any CPU.Build.0 = Release|Any CPU
+		{54D44C49-3E13-48CD-9CC9-10E8DBE28054}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{54D44C49-3E13-48CD-9CC9-10E8DBE28054}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{54D44C49-3E13-48CD-9CC9-10E8DBE28054}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{54D44C49-3E13-48CD-9CC9-10E8DBE28054}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1A6DC7E1-57AF-4A9E-8D2A-4635B7D57BF7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1A6DC7E1-57AF-4A9E-8D2A-4635B7D57BF7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1A6DC7E1-57AF-4A9E-8D2A-4635B7D57BF7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1A6DC7E1-57AF-4A9E-8D2A-4635B7D57BF7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4AC206E2-9876-4F27-8604-FA898A810163}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4AC206E2-9876-4F27-8604-FA898A810163}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4AC206E2-9876-4F27-8604-FA898A810163}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4AC206E2-9876-4F27-8604-FA898A810163}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FEC733BB-546D-4C11-85AD-865B01F7D2A6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FEC733BB-546D-4C11-85AD-865B01F7D2A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FEC733BB-546D-4C11-85AD-865B01F7D2A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FEC733BB-546D-4C11-85AD-865B01F7D2A6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{66CEC371-69FF-459F-A862-2CF33FA4577C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{66CEC371-69FF-459F-A862-2CF33FA4577C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{66CEC371-69FF-459F-A862-2CF33FA4577C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{66CEC371-69FF-459F-A862-2CF33FA4577C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{592E106E-1C41-44EF-B39A-B9C7FF1B9BC9} = {F7F61833-495B-4B70-85F7-0984949F3908}
+		{E7982BCB-096B-4C94-956E-E21E0BED3428} = {F7F61833-495B-4B70-85F7-0984949F3908}
+		{B66E7B89-6EB8-4FE8-98D2-07079A331D25} = {F7F61833-495B-4B70-85F7-0984949F3908}
+		{54D44C49-3E13-48CD-9CC9-10E8DBE28054} = {D2490A34-8B76-49E1-97B5-0A8DFFE1B55C}
+		{1A6DC7E1-57AF-4A9E-8D2A-4635B7D57BF7} = {1DC4C23D-4C5A-4A0B-A930-DEB8FEB5BEC7}
+		{4AC206E2-9876-4F27-8604-FA898A810163} = {1DC4C23D-4C5A-4A0B-A930-DEB8FEB5BEC7}
+		{FEC733BB-546D-4C11-85AD-865B01F7D2A6} = {1DC4C23D-4C5A-4A0B-A930-DEB8FEB5BEC7}
+		{66CEC371-69FF-459F-A862-2CF33FA4577C} = {9E36DCF0-1CA7-476A-9C4F-B64400C1A9C0}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9EE4C8A8-2E2F-4E4C-90C4-D1011E6E9273}
+	EndGlobalSection
+EndGlobal

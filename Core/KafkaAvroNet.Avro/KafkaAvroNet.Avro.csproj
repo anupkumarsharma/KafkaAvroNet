@@ -1,0 +1,25 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>netcoreapp2.0</TargetFrameworks>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Version>1.0.3</Version>
+    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+    <AssemblyName>KafkaAvroNet.Avro</AssemblyName>
+    <RootNamespace>KafkaAvroNet.Avro</RootNamespace>
+    <PackageId>KafkaAvroNet.Avro</PackageId>
+    <Authors>Call Intelligence</Authors>
+    <Company>CDK Global</Company>
+    <Product>Platform</Product>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="Interface\" />
+    <Folder Include="Providers\Strategy\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Apache.Avro" Version="1.7.7.2" />
+  </ItemGroup>
+
+</Project>

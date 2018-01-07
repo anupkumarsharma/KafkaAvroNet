@@ -1,0 +1,32 @@
+﻿<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>CI.Kafka.dotnet.driver</id>
+    <version>1.0.0</version>
+    <authors>CI.Kafka</authors>
+    <owners>CI.Kafka</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Package Description</description>
+    <dependencies>
+      <group targetFramework="net452">
+        <!--<dependency id="KafkaAvroNet.Kafka" version="1.0.0" exclude="Build,Analyzers" />
+        <dependency id="KafkaAvroNet.SchemaRegistry" version="1.0.0" exclude="Build,Analyzers" />
+        <dependency id="KafkaAvroNet.Avro" version="1.0.0" exclude="Build,Analyzers" />-->
+        <dependency id="Apache.Avro" version="1.7.7.2" exclude="Build,Analyzers" />
+        <dependency id="Confluent.Kafka" version="0.11.2" exclude="Build,Analyzers" />
+        <dependency id="Newtonsoft.Json" version="10.0.3" exclude="Build,Analyzers" />
+      </group>
+    </dependencies>
+  </metadata>
+  <files>
+
+  
+    
+    <file src="bin\Debug\netstandard1.4\TestProjectB.dll" target="lib\netstandard1.4\TestProjectB.dll" />
+    <file src="bin\Debug\netstandard1.4\TestProjectA.dll" target="lib\netstandard1.4\TestProjectA.dll" />
+  </files>
+</package>
+
+
+
+

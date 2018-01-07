@@ -1,0 +1,22 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>netcoreapp2.0</TargetFrameworks>
+    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+    <Version>1.0.3</Version>
+    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+    <AssemblyName>KafkaAvroNet.Kafka</AssemblyName>
+    <RootNamespace>KafkaAvroNet.Kafka</RootNamespace>
+    <PackageId>KafkaAvroNet.Kafka</PackageId>
+    <Authors>Call Intelligence</Authors>
+    <Company>CDK Global</Company>
+    <Product>Platform</Product>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Provider\ConfluentProducer.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Confluent.Kafka" Version="0.11.3" />
+  </ItemGroup>
+</Project>

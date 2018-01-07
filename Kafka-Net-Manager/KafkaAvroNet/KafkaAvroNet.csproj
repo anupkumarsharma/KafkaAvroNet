@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Core\KafkaAvroNet.Kafka\KafkaAvroNet.Kafka.csproj" />
+    <ProjectReference Include="..\..\Core\KafkaAvroNet.Avro\KafkaAvroNet.Avro.csproj" />
+    <ProjectReference Include="..\..\Core\KafkaAvroNet.SchemaRegistry\KafkaAvroNet.SchemaRegistry.csproj" />
+  </ItemGroup>
+</Project>
