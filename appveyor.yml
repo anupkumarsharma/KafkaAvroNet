@@ -1,21 +1,19 @@
-version: '1.0.{build}'
+version: 1.0.{build}
+image: Visual Studio 2017
 configuration:
 - Debug
 platform: Any CPU
 environment:
   DOTNET_CLI_TELEMETRY_OPTOUT: 1
-install:
-- rd /s /q "C:\Program Files\dotnet\sdk\1.0.1"
-init:
-- ps: $Env:LABEL = "beta" + $Env:APPVEYOR_BUILD_NUMBER.PadLeft(5, "0")
-before_build:
-- appveyor-retry dotnet restore -v Minimal
 build_script:
 - dotnet build "KafkaAvroNet.sln" -c %CONFIGURATION%
 after_build:
-- dotnet pack "KafkaAvroNet" -c %CONFIGURATION% --no-build -o artifacts
-artifacts:
-- path: artifacts\**\*.*
+- dotnet pack Core/KafkaAvroNet.SchemaRegistry/KafkaAvroNet.SchemaRegistry.csproj -c "Debug" --no-build --output \nupkgs
+- dotnet pack Kafka-Net-Manager/KafkaAvroNet/KafkaAvroNet.csproj -c "Debug" --no-build --output \nupkgs 
+- dotnet pack Core/KafkaAvroNet.SchemaRegistry/KafkaAvroNet.Avro.csproj -c "Debug" --no-build --output \nupkgs
+- dotnet pack Core/KafkaAvroNet.SchemaRegistry/KafkaAvroNet.Kafka.csproj -c "Debug" --no-build --output \nupkgs
+test_script:
+- ps: ForEach ($folder in (Get-ChildItem -Path test -Directory)) { dotnet test $folder.FullName   -r . --no-build}
 deploy:
   provider: NuGet
   api_key:
