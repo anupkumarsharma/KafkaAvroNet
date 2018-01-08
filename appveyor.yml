@@ -10,8 +10,8 @@ build_script:
 after_build:
 - dotnet pack Core/KafkaAvroNet.SchemaRegistry/KafkaAvroNet.SchemaRegistry.csproj -c "Debug" --no-build --output \nupkgs
 - dotnet pack Kafka-Net-Manager/KafkaAvroNet/KafkaAvroNet.csproj -c "Debug" --no-build --output \nupkgs 
-- dotnet pack Core/KafkaAvroNet.SchemaRegistry/KafkaAvroNet.Avro.csproj -c "Debug" --no-build --output \nupkgs
-- dotnet pack Core/KafkaAvroNet.SchemaRegistry/KafkaAvroNet.Kafka.csproj -c "Debug" --no-build --output \nupkgs
+- dotnet pack Core/KafkaAvroNet.Avro/KafkaAvroNet.Avro.csproj -c "Debug" --no-build --output \nupkgs
+- dotnet pack Core/KafkaAvroNet.Kafka/KafkaAvroNet.Kafka.csproj -c "Debug" --no-build --output \nupkgs
 test_script:
 - ps: ForEach ($folder in (Get-ChildItem -Path test -Directory)) { dotnet test $folder.FullName   -r . --no-build}
 deploy:
