@@ -1,0 +1,26 @@
+machine:
+  pre:
+    - curl -sSL https://s3.amazonaws.com/circle-downloads/install-circleci-docker.sh | bash -s -- 1.10.0
+    - pip install --upgrade pip
+    - pip install docker-compose
+    - docker-compose version
+  services:
+    - docker
+dependencies:
+  pre:
+    - curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.gpg
+    - sudo mv microsoft.gpg /etc/apt/trusted.gpg.d/microsoft.gpg
+    - sudo sh -c 'echo "deb [arch=amd64] https://packages.microsoft.com/repos/microsoft-ubuntu-trusty-prod trusty main" > /etc/apt/sources.list.d/dotnetdev.list'
+    - sudo apt-get update
+    - sudo apt-get install dotnet-sdk-2.1.3
+    - sudo docker-compose up -d
+  override:
+    - dotnet restore
+
+test:
+  pre:
+    - dotnet --version
+    - docker-compose version
+    - dotnet build "KafkaAvroNet.sln"
+  override:
+    - dotnet test
