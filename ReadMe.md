@@ -1,4 +1,4 @@
-# KafKaAvroNet [![Build status](https://ci.appveyor.com/api/projects/status/wscwrnu0d0s09s9b?svg=true)](https://ci.appveyor.com/project/anupkumarsharma/kafkaavronet)
+# KafKaAvroNet [![Build status](https://ci.appveyor.com/api/projects/status/wscwrnu0d0s09s9b?svg=true)](https://ci.appveyor.com/project/anupkumarsharma/kafkaavronet) [![CircleCI](https://circleci.com/gh/anupkumarsharma/KafkaAvroNet/tree/master.svg?style=svg)](https://circleci.com/gh/anupkumarsharma/KafkaAvroNet/tree/master)
 
 End to End solution for .Net using Schema registry, Avro Serde using reflection, Kafka.
 

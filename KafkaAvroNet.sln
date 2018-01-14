@@ -17,6 +17,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		Build.ps1 = Build.ps1
 		docker-compose.yml = docker-compose.yml
 		ReadMe.md = ReadMe.md
+		circle.yml = circle.yml
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KafkaAvroNet.Avro", "Core\KafkaAvroNet.Avro\KafkaAvroNet.Avro.csproj", "{B66E7B89-6EB8-4FE8-98D2-07079A331D25}"
