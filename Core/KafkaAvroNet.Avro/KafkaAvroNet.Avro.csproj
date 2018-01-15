@@ -13,6 +13,9 @@
     <Product>Platform</Product>
   </PropertyGroup>
 
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugType>full</DebugType>
+  </PropertyGroup>
   <ItemGroup>
     <Folder Include="Interface\" />
     <Folder Include="Providers\Strategy\" />

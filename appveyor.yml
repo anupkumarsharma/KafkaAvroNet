@@ -4,6 +4,10 @@ configuration:
 - Debug
 environment:
   DOTNET_CLI_TELEMETRY_OPTOUT: 1
+before_build:
+- choco install codecov
+- choco install opencover.portable
+- 
 build_script:
 - dotnet build "KafkaAvroNet.sln" -c %CONFIGURATION%
 after_build:
@@ -12,7 +16,10 @@ after_build:
 - dotnet pack Core/KafkaAvroNet.Avro/KafkaAvroNet.Avro.csproj -c "Debug" --no-build --output \nupkgs
 - dotnet pack Core/KafkaAvroNet.Kafka/KafkaAvroNet.Kafka.csproj -c "Debug" --no-build --output \nupkgs
 test_script:
-- ps: ForEach ($folder in (Get-ChildItem -Path test -Directory)) { dotnet test $folder.FullName   -r . --no-build}
+- ps: ForEach ($folder in (Get-ChildItem -Path test -Directory)) { C:\ProgramData\chocolatey\lib\opencover.portable\tools\opencover.console.exe -register:user -target:"C:/Program Files/dotnet/dotnet.exe" -targetargs:"test $($folder.FullName) --no-build" -oldStyle -filter:"+[*]*" -mergebyhash -mergeoutput -output:"coverage.xml" }
+- ps: codecov -f .\coverage.xml -t '1209a029-06ac-4908-8fa7-50f92ce3095a'
+artifacts:
+- path: '**\KafkaAvroNet.*.nupkg' 
 deploy:
   provider: NuGet
   api_key:
@@ -21,3 +28,5 @@ deploy:
   artifact: /.*\.nupkg/
   on:
     branch: master
+
+

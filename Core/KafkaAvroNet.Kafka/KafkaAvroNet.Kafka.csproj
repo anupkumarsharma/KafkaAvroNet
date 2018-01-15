@@ -13,6 +13,9 @@
     <Product>Platform</Product>
   </PropertyGroup>
 
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugType>full</DebugType>
+  </PropertyGroup>
   <ItemGroup>
     <Compile Remove="Provider\ConfluentProducer.cs" />
   </ItemGroup>
