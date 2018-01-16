@@ -30,7 +30,7 @@ deploy:
   on:
     branch: master
    # Deploy to GitHub Releases
-- provider: GitHub
+  provider: GitHub
   artifact: /.*\.nupkg/           # upload all NuGet packages to release assets
   draft: false
   prerelease: false
