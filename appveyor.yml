@@ -6,8 +6,7 @@ environment:
   DOTNET_CLI_TELEMETRY_OPTOUT: 1
 before_build:
 - choco install codecov
-- choco install opencover.portable
-- 
+- choco install opencover.portable 
 build_script:
 - dotnet build "KafkaAvroNet.sln" -c %CONFIGURATION%
 after_build:
@@ -24,11 +23,11 @@ artifacts:
 deploy:
 - provider: NuGet
   api_key:
-    secure: usNVNoWxrMEIDR+XenAm4dE2xn59gYMVEi0Gsd9v0FZcQ6BFo126Ax6wp5QRGU/N
+   secure: +djIhkvLo37qY7GB/h0jlnwSND05uPLlg0vFolHqxJVi+LNnvPxXeyCjSmfRWr32
   skip_symbols: false
   artifact: /.*\.nupkg/
   on:
-    branch: master
+   branch: master
    # Deploy to GitHub Release
 
 
