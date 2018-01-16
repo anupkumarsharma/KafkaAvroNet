@@ -18,6 +18,7 @@ after_build:
 test_script:
 - ps: ForEach ($folder in (Get-ChildItem -Path test -Directory)) { C:\ProgramData\chocolatey\lib\opencover.portable\tools\opencover.console.exe -register:user -target:"C:/Program Files/dotnet/dotnet.exe" -targetargs:"test $($folder.FullName) --no-build" -oldStyle -filter:"+[*]*" -mergebyhash -mergeoutput -output:"coverage.xml" }
 - ps: codecov -f .\coverage.xml -t '1209a029-06ac-4908-8fa7-50f92ce3095a'
+- ps: dir
 artifacts:
 - path: 'nupkgs\*.nupkg'
 deploy:
@@ -25,7 +26,7 @@ deploy:
   api_key:
     secure: usNVNoWxrMEIDR+XenAm4dE2xn59gYMVEi0Gsd9v0FZcQ6BFo126Ax6wp5QRGU/N
   skip_symbols: false
-  artifact: nupkgs\*.nupkg'
+  artifact: .\nupkgs\*.nupkg'
   on:
     branch: master
 
