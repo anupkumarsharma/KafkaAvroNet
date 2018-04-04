@@ -25,18 +25,18 @@ namespace KafkaAvroNet.Avro
         public T Deserialize(Stream stream ,getSchema getWriterSchemaDelegate) 
         {
             var poco = new T();
-           // var stream = new MemoryStream(payload);
             BinaryReader reader = new BinaryReader(stream);
             reader.BaseStream.Position = 0;
             //write the magic byte
             var magicByte = reader.ReadByte();
             // Read Schema Id 
-
-            var schemaID = Helper.AvroDecodeInt(reader);  // reader.ReadUInt32();
+            //Critical fix - This line doesn't work in several cases, need to be evaluated before remerged.  
+            //var schemaID = Helper.AvroDecodeInt(reader);  
+            var schemaID =  reader.ReadUInt32();
             if(getWriterSchemaDelegate==null)
                  _provider.Format<T>(stream,_readerSchema,_readerSchema,ref poco);
             else
-                _provider.Format<T>(stream, _readerSchema, getWriterSchemaDelegate(schemaID), ref poco); 
+                _provider.Format<T>(stream, _readerSchema, getWriterSchemaDelegate(checked((int)schemaID)), ref poco); 
             reader.Close();
             return poco;
 
