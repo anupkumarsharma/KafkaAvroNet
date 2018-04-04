@@ -77,8 +77,9 @@ namespace KafkaAvroNet.Avro
             {
                 uintSchemaId = Helper.SwapEndianness(uintSchemaId);
             }
-            Helper.AvroEncodeInt(writer,Convert.ToInt32(_serializationContext.SchemaId));
-          //  writer.Write(uintSchemaId);
+            //Critical fix - This line doesn't work in several cases, need to be evaluated before remerged.  
+            // Helper.AvroEncodeInt(writer,Convert.ToInt32(_serializationContext.SchemaId));
+             writer.Write(uintSchemaId);
             //write the content 
             var serializedBytes = _reflectionSerialization.Format<T>(obj, _serializationContext.AvroSchema,
                 _serializationContext.SchemaString);
